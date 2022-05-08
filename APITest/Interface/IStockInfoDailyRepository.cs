@@ -8,6 +8,6 @@ namespace APITest.Interface
 {
     public interface IStockInfoDailyRepository
     {
-        public Task<IList<T_StockInfoDaily>> GetAll();
+        public Task<IEnumerable<T_StockInfoDaily>> GetAll();
     }
 }

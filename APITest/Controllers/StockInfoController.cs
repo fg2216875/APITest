@@ -35,10 +35,10 @@ namespace APITest.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
-        [HttpPost]
-        public void PER_DY_PBR(int ROCyear, int Month, string StockNO)
-        {
+        //[HttpPost]
+        //public void PER_DY_PBR(int ROCyear, int Month, string StockNO)
+        //{
             
-        }
+        //}
     }
 }

@@ -17,7 +17,7 @@ namespace APITest.Models
         public StockDbContext(IConfiguration configuration)
         {
             _Configuration = configuration;
-            ConnectionString = configuration.GetConnectionString("ConnectionString");
+            ConnectionString = configuration.GetConnectionString("DefaultConnectionString");
         }
         public IDbConnection CreatConnection()
         {

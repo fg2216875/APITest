@@ -2,6 +2,7 @@
 using APITest.Models;
 using Dapper;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 using StockAnalysis.Dapper.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace StockAnalysis.Dapper.Respotory
         {
             _StockDb = StockDb;
         } 
-        public async Task<IList<T_StockInfoDaily>> GetAll()
+        public async Task<IEnumerable<T_StockInfoDaily>> GetAll()
         {
             string sql = "select * from T_StockInfoDaily";
             using (var conn = _StockDb.CreatConnection())
@@ -25,7 +26,12 @@ namespace StockAnalysis.Dapper.Respotory
                 var StockInfo = await conn.QueryAsync<T_StockInfoDaily>(sql);
                 return StockInfo.ToList();
             }
-            
+            //using (var conn = new SqlConnection(_StockDb.GetConnection()))
+            //{
+            //    conn.Open();
+            //    var StockInfo = await conn.QueryAsync<T_StockInfoDaily>(sql);
+            //    return StockInfo.ToList();
+            //}
         }
         //public void Insert(T_StockInfoDaily StockInfoDaily)
         //{
