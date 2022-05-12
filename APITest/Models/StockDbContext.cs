@@ -23,5 +23,10 @@ namespace APITest.Models
         {
             return new SqlConnection(ConnectionString);
         }
+
+        public string GetConnectionStr()
+        {
+            return ConnectionString;
+        }
     }
 }

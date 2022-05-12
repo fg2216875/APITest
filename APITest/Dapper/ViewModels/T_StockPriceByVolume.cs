@@ -14,5 +14,7 @@ namespace StockAnalysis.Dapper.ViewModels
         public DateTime? Date { get; set; }
         public decimal? PriceByVolume { get; set; }
         public int? VolumeK { get; set; }
+        public DateTime? CreateDate { get; set; }
+        public int? Status { get; set; }
     }
 }

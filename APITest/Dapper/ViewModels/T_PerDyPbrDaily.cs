@@ -11,10 +11,12 @@ namespace StockAnalysis.Dapper.ViewModels
         [Key]
         public int PerDyPbrDailyID { get; set; }
         public string StockNO { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime? Date { get; set; }
         public double? DividendYield { get; set; }
         public double? PriceEarningsRatio { get; set; }
         public double? PriceBookRatio { get; set; }
         public DateTime FinancialReportYearQuarter { get; set; }
+        public DateTime? CreateDate { get; set; }
+        public int? Status { get; set; }
     }
 }

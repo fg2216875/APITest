@@ -19,5 +19,7 @@ namespace StockAnalysis.Dapper.ViewModels
         public int? InvestmentTrustVolume { get; set; }
         public int? DealerVolume { get; set; }
         public int? InvestorsTotalDiffVolK { get; set; }
+        public DateTime? CreateDate { get; set; }
+        public int? Status { get; set; }
     }
 }

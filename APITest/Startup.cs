@@ -31,6 +31,7 @@ namespace APITest
         {
             services.AddSingleton<StockDbContext>();
             services.AddScoped<IStockInfoDailyRepository, StockInfoDailyRepository>();
+            services.AddScoped<IStockPriceByVolumeRepository, StockPriceByVolumeRepository>();
             services.AddControllers();           
         }
 
