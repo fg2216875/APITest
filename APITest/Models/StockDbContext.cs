@@ -12,11 +12,9 @@ namespace APITest.Models
 {
     public class StockDbContext
     {
-        private readonly IConfiguration _Configuration;
         private readonly string ConnectionString;
         public StockDbContext(IConfiguration configuration)
         {
-            _Configuration = configuration;
             ConnectionString = configuration.GetConnectionString("DefaultConnectionString");
         }
         public IDbConnection CreatConnection()
@@ -24,9 +22,5 @@ namespace APITest.Models
             return new SqlConnection(ConnectionString);
         }
 
-        public string GetConnectionStr()
-        {
-            return ConnectionString;
-        }
     }
 }

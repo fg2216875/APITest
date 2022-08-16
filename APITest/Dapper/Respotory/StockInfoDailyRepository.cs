@@ -29,6 +29,18 @@ namespace StockAnalysis.Dapper.Respotory
                 return StockInfo.ToList();
             }
         }
+
+        public async Task<IEnumerable<T_StockInfoDaily>> GetStockInfo(string StockNO)
+        {
+            string sql = "select * from T_StockInfoDaily where StockNO = @StockNO";
+            using(var conn = _StockDb.CreatConnection())
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@StockNO", StockNO, DbType.String);
+                var StockInfo = await conn.QueryAsync<T_StockInfoDaily>(sql,parameters);
+                return StockInfo.ToList();
+            }
+        }
         public async Task<string> Insert(IEnumerable<T_PerDyPbrDaily> data)
         {
             using (var conn = _StockDb.CreatConnection())

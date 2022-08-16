@@ -10,6 +10,8 @@ namespace APITest.Interface
     {
         public Task<IEnumerable<T_StockInfoDaily>> GetAll();
 
+        public Task<IEnumerable<T_StockInfoDaily>> GetStockInfo(string StockNO);
+
         public Task<string> Insert(IEnumerable<T_PerDyPbrDaily> StockInfoDaily);
 
         public Task<string> InsertStockDaily(T_StockInfoDaily data);

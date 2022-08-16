@@ -38,6 +38,20 @@ namespace APITest.Controllers
             }
         }
 
+        [HttpGet("{StockNO}/Info")]
+        public async Task<IActionResult> GetStockInfo(string StockNO)
+        {
+            try
+            {
+                var result = await _StockInfoDailyRepository.GetStockInfo(StockNO);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateStockInfo([FromBody] ToStockPer data)
         {
