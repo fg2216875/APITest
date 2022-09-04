@@ -52,22 +52,8 @@ namespace APITest.Controllers
             }
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateStockInfo([FromBody] ToStockPer data)
-        {
-            try
-            {
-                var result = await _StockInfoDailyRepository.Insert(data.Table);
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, ex.Message);
-            }
-        }
-
         [HttpPost("Daily")]
-        public async Task<IActionResult> CreateStockDaily([FromBody] T_StockInfoDaily data)
+        public async Task<IActionResult> CreateStockDaily(T_StockInfoDaily data)
         {
             try
             {
@@ -99,6 +85,20 @@ namespace APITest.Controllers
         //        PriceBookRatio = x.PriceBookRatio,
         //        FinancialReportYearQuarter = x.FinancialReportYearQuarter.AddYears(1911)
         //    }).ToList();
+        //}
+
+        //[HttpPost]
+        //public async Task<IActionResult> CreateStockInfo([FromBody] ToStockPer data)
+        //{
+        //    try
+        //    {
+        //        var result = await _StockInfoDailyRepository.Insert(data.Table);
+        //        return Ok(result);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, ex.Message);
+        //    }
         //}
     }
 }
